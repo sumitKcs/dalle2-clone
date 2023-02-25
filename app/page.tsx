@@ -1,12 +1,9 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import { ShowCase } from "@/components";
 
 export default function Home() {
   return (
-    <main>
-      <div className=" text-yellow-400">hello</div>
-    </main>
+    <section className="max-w-7xl mx-auto" >
+      <ShowCase />
+    </section>
   );
 }
