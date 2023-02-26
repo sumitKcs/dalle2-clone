@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { JsxElement } from "typescript";
 import Card from "./Card";
 import FormField from "./FormField";
 import Loader from "./Loader";
@@ -27,10 +26,12 @@ const RenderCard = ({ data, title }: Props): any => {
 function ShowCase() {
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
-  const [searchText, setSearchText] = useState();
+  const [searchText, setSearchText] = useState("");
   let searchResults: [{ id: string; name: string }] = [
     { id: "aa", name: "asd" },
   ];
+
+  const handleSearchChange = () => {};
 
   return (
     <>
@@ -44,7 +45,14 @@ function ShowCase() {
         </p>
       </div>
       <div className="mt-16">
-        <FormField />
+        <FormField
+          labelName="Search posts"
+          type="text"
+          name="text"
+          placeholder="Search something..."
+          value={searchText}
+          handleChange={handleSearchChange}
+        />
       </div>
       <div className="mt-18">
         {loading ? (
@@ -61,9 +69,15 @@ function ShowCase() {
             )}
             <div className=" grid lg:grid-cold-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
               {searchText ? (
-                <RenderCard data={[]} title="No search reults found" />
+                <RenderCard
+                  data={[{ id: "", name: "" }]}
+                  title="No search reults found"
+                />
               ) : (
-                <RenderCard data={[]} title="No posts found" />
+                <RenderCard
+                  data={[{ id: "", name: "" }]}
+                  title="No posts found"
+                />
               )}
             </div>
           </>

@@ -5,7 +5,7 @@ type Props = {
   placeholder: string;
   value: string;
   handleChange: any;
-  handleSurpriseMe: any;
+  handleSurpriseMe?: any;
   isSurprise?: boolean;
 };
 

@@ -54,6 +54,7 @@ function CreatePost() {
             name="prompt"
             placeholder="'a sunlit indoor lounge area with a pool with clear water and another pool with translucent pastel pink water, next to a big window, digital art',"
             value={form.prompt}
+            handleChange={handleChange}
             isSurprise
             handleSurpriseMe={handleSurpriseMe}
           />
