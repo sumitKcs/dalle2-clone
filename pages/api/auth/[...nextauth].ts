@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
+import type { NextAuthOptions } from "next-auth"
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -9,7 +10,6 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET || "enter your google secret key" ,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET
 }
 
 export default NextAuth(authOptions)

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FormField, Loader } from "@/components";
 import getRandomPrompt from "@/utils";
+import { useSession } from "next-auth/react";
 
 function CreatePost() {
   const router = useRouter();
@@ -12,22 +13,44 @@ function CreatePost() {
     prompt: "",
     photo: "",
   });
-  const [generatingIng, setgeneratingIng] = useState(false);
+  const [generatingIng, setGeneratingImg] = useState(false);
   const [loading, setloading] = useState(false);
-
-  const handleSubmit = () => {};
+  const { data: session } = useSession();
 
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSurpriseMe = () => {
-    console.log("form prompt:", form.prompt);
+  const handleSurpriseMe = async () => {
     const randomPrompt = getRandomPrompt(form.prompt);
     setForm({ ...form, prompt: randomPrompt });
   };
 
-  const generateImage = () => {};
+  const generateImage = async () => {
+    if (form.prompt) {
+      try {
+        setGeneratingImg(true);
+        const response = await fetch("/api/generateImage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ prompt: form.prompt, session }),
+        });
+
+        const data = await response.json();
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+      } catch (error) {
+        alert(error);
+      } finally {
+        setGeneratingImg(false);
+      }
+    } else {
+      alert("Please enter a prompt");
+    }
+  };
+
+  const handleSubmit = () => {};
 
   return (
     <section className="max-w-7xl mx-auto">

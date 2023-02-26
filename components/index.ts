@@ -4,6 +4,7 @@ import Loader from "./Loader";
 import Header from "./Header";
 import ShowCase from "./ShowCase";
 import { SessionProvider } from "./SessionProvider";
+import Login from './Login'
 
 export {
     Card, 
@@ -11,5 +12,6 @@ export {
     Loader,
     Header,
     ShowCase,
-    SessionProvider
+    SessionProvider,
+    Login
 }

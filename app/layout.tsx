@@ -1,8 +1,7 @@
 import "./globals.css";
-import { Header, SessionProvider } from "@/components";
+import { Header, SessionProvider, Login } from "@/components";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]";
-import Login from "@/components/Login";
+import { authOptions } from "../pages/api/auth/[...nextauth]";
 
 export const metadata = {
   title: "Dall-E 2",
