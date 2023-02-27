@@ -114,7 +114,7 @@ function CreatePost() {
             )}
             {generatingIng && (
               <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounde-lg">
-                <Loader />
+                <Loader width="w-10" height="h-10" />
               </div>
             )}
           </div>
@@ -130,14 +130,20 @@ function CreatePost() {
         </div>
         <div className="mt-10">
           <p className="mt-2 text-[#666e75] text-[14px]">
-            Once you have created the imaghe you want, you can share it with
+            Once you have created the image you want, you can share it with
             others in the community.
           </p>
           <button
             type="submit"
             className="mt-3 text-white bg-[#6469ff] font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
-            {loading ? "Sharing..." : "Share with the community"}
+            {loading ? (
+              <p>
+                <Loader width="w-5" height="h-5" />
+              </p>
+            ) : (
+              <p>Share with the community</p>
+            )}
           </button>
         </div>
       </form>

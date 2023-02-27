@@ -27,11 +27,8 @@ const RenderCard = ({ data, title }: Props): any => {
 
 function ShowCase() {
   const { data: session } = useSession();
-  const [loading, setLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [allPosts, setAllPosts] = useState<DocumentData[]>();
   const [searchResults, setSearchResults] = useState<DocumentData[]>();
-  const [searchTImeout, setSearchTImeout] = useState(null);
 
   const [posts] = useCollection(
     session && query(collection(db, "posts"), orderBy("createdAt", "desc"))
@@ -46,14 +43,16 @@ function ShowCase() {
     setSearchText(e.target.value);
     setTimeout(() => {
       const searchResults = postsData?.filter((item) => {
-        return item.user?.name
-          ?.toString()
-          .toLowerCase()
-          .includes(searchText.toLowerCase()) ||
+        return (
+          item.user?.name
+            ?.toString()
+            .toLowerCase()
+            .includes(searchText.toLowerCase()) ||
           item.prompt
             .toString()
             .toLowerCase()
-            .includes(searchText.toLowerCase());
+            .includes(searchText.toLowerCase())
+        );
       });
       console.log("searchResults:", searchResults);
       setSearchResults(searchResults);
@@ -82,30 +81,19 @@ function ShowCase() {
         />
       </div>
       <div className="mt-18">
-        {loading ? (
-          <div className="flex justify-center items-center">
-            <Loader />
-          </div>
-        ) : (
-          <>
-            {searchText && (
-              <h2 className="font-medium text-[#666e75] text-xl mb-3">
-                Showing results for
-                <span className="text-[#222328]"> {searchText}</span>
-              </h2>
-            )}
-            <div className=" grid lg:grid-cold-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
-              {searchText ? (
-                <RenderCard
-                  data={searchResults}
-                  title="No search reults found"
-                />
-              ) : (
-                <RenderCard data={postsData} title="No posts found" />
-              )}
-            </div>
-          </>
+        {searchText && (
+          <h2 className="font-medium text-[#666e75] text-xl mb-3">
+            Showing results for
+            <span className="text-[#222328]"> {searchText}</span>
+          </h2>
         )}
+        <div className=" grid lg:grid-cold-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
+          {searchText ? (
+            <RenderCard data={searchResults} title="No search reults found" />
+          ) : (
+            <RenderCard data={postsData} title="No posts found" />
+          )}
+        </div>
       </div>
     </>
   );
