@@ -18,6 +18,9 @@ module.exports = {
         cardhover:
           "0 0 1px 0 rgba(189,192,207,0.06),0 10px 16px -1px rgba(189,192,207,0.4)",
       },
+      letterSpacing: {
+        wide: "5rem",
+      },
     },
   },
   plugins: [],

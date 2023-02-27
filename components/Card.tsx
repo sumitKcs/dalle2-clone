@@ -11,6 +11,7 @@ function Card({ _id, post }: data) {
   return (
     <div className="rounded-xl group relative shadow-card hover:shadow-cardhover card">
       <img
+        loading="lazy"
         className="w-full h-auto object-cover roundex-xl"
         src={post.photoUrl}
         alt={post.prompt}
@@ -23,7 +24,6 @@ function Card({ _id, post }: data) {
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-full object-cover bg-green-700 flex justify-center items-center text-white text-xs font-bold">
               <img
-                loading="lazy"
                 className="rounded-full"
                 src={post?.user?.avatar}
                 alt={post?.user?.name}

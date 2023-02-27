@@ -9,12 +9,12 @@ function Header() {
   return (
     <header className=" w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
       <Link href="/">
-        <img src="/logo.svg" alt="logo" className="w-28 object-contain" />
+        <img src="/logo-white.svg" alt="logo" className="w-28 object-contain" />
       </Link>
       <div className="flex justify-between items-center gap-7">
         <Link
           href="/create-post"
-          className=" font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md"
+          className=" font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md hidden md:flex"
           title="Create AI Image"
         >
           Create
@@ -32,7 +32,7 @@ function Header() {
               className="rounded-lg px-1 py-1.5 text-sm text-gray-700"
               title="Sign Out"
             >
-              <ArrowRightOnRectangleIcon className="h-7 w-7 inline text-red-600" />
+              <ArrowRightOnRectangleIcon className="font-inter h-7 w-7 inline text-red-600" />
             </button>
           </div>
         </div>
