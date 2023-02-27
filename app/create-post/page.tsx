@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FormField, Loader } from "@/components";
 import getRandomPrompt from "@/utils";
@@ -8,14 +8,14 @@ import { useSession } from "next-auth/react";
 
 function CreatePost() {
   const router = useRouter();
+  const [generatingIng, setGeneratingImg] = useState(false);
+  const [loading, setloading] = useState(false);
+  const { data: session } = useSession();
   const [form, setForm] = useState({
     name: "",
     prompt: "",
     photo: "",
   });
-  const [generatingIng, setGeneratingImg] = useState(false);
-  const [loading, setloading] = useState(false);
-  const { data: session } = useSession();
 
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -35,7 +35,7 @@ function CreatePost() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ prompt: form.prompt, session }),
+          body: JSON.stringify({ prompt: form.prompt }),
         });
 
         const data = await response.json();
@@ -50,7 +50,32 @@ function CreatePost() {
     }
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (form.prompt && form.photo) {
+      setloading(true);
+      try {
+        const response = await fetch("/api/postImage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: session?.user?.name,
+            prompt: form.prompt,
+            photo: form.photo,
+            session,
+          }),
+        });
+        await response.json();
+        router.push("/");
+      } catch (error) {
+        alert(error);
+      } finally {
+        setloading(false);
+      }
+    }
+  };
 
   return (
     <section className="max-w-7xl mx-auto">
@@ -63,14 +88,6 @@ function CreatePost() {
       </div>
       <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">
-          <FormField
-            labelName="your name"
-            type="text"
-            name="name"
-            placeholder="John Doe"
-            value={form.name}
-            handleChange={handleChange}
-          />
           <FormField
             labelName="prompt"
             type="text"

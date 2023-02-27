@@ -22,7 +22,6 @@ export default async function handler(
           response_format: "b64_json"
         })
         const image = aiResponse.data.data[0].b64_json
-        console.log("image:", image)
         res.status(200).json({ message:"success", photo: image })
     
       } catch(error){
