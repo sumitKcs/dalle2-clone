@@ -7,7 +7,6 @@ type data = {
 };
 
 function Card({ _id, post }: data) {
-  console.log("card:", post);
   return (
     <div className="rounded-xl group relative shadow-card hover:shadow-cardhover card">
       <img

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function DevelopedBy() {
   return (
-    <div className="h-[3.6rem] text-gray-500 flex justify-center items-center">
+    <div className="flex justify-center items-center bg-white px-4 py-4 border-b border-b-[#e6ebf4]">
       <div className="flex-1 ">
         Developed by &nbsp;
         <Link

@@ -98,7 +98,7 @@ function ShowCase() {
             <span className="text-[#222328]"> {searchText}</span>
           </h2>
         )}
-        <div className=" grid lg:grid-cold-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
+        <div className=" grid lg:grid-col-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
           {searchText ? (
             <RenderCard data={searchResults} title="No search reults found" />
           ) : (
