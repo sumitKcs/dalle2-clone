@@ -91,8 +91,8 @@ export default async function RootLayout({
           itemProp="image"
           content="https://i.postimg.cc/xjxPr0ys/Untitled-design-10.png"
         />
-        <meta property="og:image:width" content="200" />
-        <meta property="og:image:height" content="200" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
         <meta
           property="og:image"
           itemProp="image"
