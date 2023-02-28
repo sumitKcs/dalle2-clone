@@ -87,14 +87,14 @@ export default async function RootLayout({
           content="DALL.E 2 - AI Image Generation Tool"
         />
         <meta
-          property="og:image"
+          property="og:image:url"
           itemProp="image"
           content="/meta-preview-dalle.png"
         />
         <meta property="og:image:width" content="1289" />
         <meta property="og:image:height" content="640" />
         <meta
-          property="og:image"
+          property="og:image:url"
           itemProp="image"
           content="meta-preview-dalle-200x200.png"
         />
