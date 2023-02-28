@@ -1,38 +1,123 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p id="header"><p>
 
-## Getting Started
+<br>
 
-First, run the development server:
+<p id="project-title"><p>
+
+<a href=#table-of-contents>![DALL.E 2 Clone](https://i.postimg.cc/GpzMR1bL/dalle-title.png)</a>
+
+<br>
+
+<a href="https://dalle-sumit.up.railway.app/">![DALL.E 2 Clone](https://i.postimg.cc/59szb2cQ/dalle-preview.png)</a>
+
+ChatGPT (Chat Generative Pre-trained Transformer) is a chatbot developed by OpenAI and launched in November 2022. It is built on top of OpenAI's GPT-3 family of large language models and has been fine-tuned (an approach to transfer learning) using both supervised and reinforcement learning techniques.
+
+#
+
+<br>
+<p id="table-of-contents"><p>
+
+<a href=#table-of-contents>![Table of Contents](https://res.cloudinary.com/dn1e07eul/image/upload/v1659241355/Readme%20Headers/inter-toc_euxbbw.png)</a>
+
+- [Installation](#installation)
+- [Tech Stack](#tech-stack)
+- [Live Site](#live-site)
+- [Let's Connect!](#lets-connect) <br>
+
+#
+
+<br>
+
+<p id="installation"><p>
+
+<a href=#installation>![Installation](https://res.cloudinary.com/dn1e07eul/image/upload/v1659389842/Readme%20Headers/inter-installation_j9ixlq.png)</a>
+
+`**Note**`: This app requires API key from <a href="https://openai.com/api/" >OPENAI</a>, <a href="https://console.cloud.google.com/" >Google OAuth Client ID and Client Secret</a> and <a href="https://firebase.google.com/" >Firebase Service Account Key</a>
+<a href="https://console.cloudinary.com/">Cloudinary's cloud name, cloud API key and cloud API secret</a>
+
+### 1. Download Node.js and `npm` (follow instructions [here](https://nodejs.org/en/))
+
+### 2. Git clone and cd into the repo folder:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+https://github.com/sumitKcs/dalle2-clone.git && cd dalle2-clone
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Install all dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 4. In root directory of the project files, create a `.env.local` file
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+.env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 5. In the `.env.local` file, create following environment variables:
 
-## Learn More
+```
+GOOGLE_ID=YOUR_GOOGLE_OAUTH_ID
+GOOGLE_SECRET=YOUR_GOOGLE_OAUTH_SECRET_KEY
+NEXTAUTH_SECRET=ANY_RANDOM_LONG_ALPHANUMERIC_STRING
+NEXTAUTH_URL=YOUR_DOMAIN_URL
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+CLOUDINARY_CLOUD_NAME=YOUR_CLOUDINARY_CLOUD_NAME
+CLOUDINARY_API_KEY=YOUR_CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET=YOUR_CLOUDINARY_API_SECRET
+FIREBASE_SERVICE_ACCOUNT_KEY=YOUR_FIREBASE_SERVICE_ACCOUNT_KEY
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Run the server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm start
+#for deployed version
 
-## Deploy on Vercel
+npm run dev
+#for deployed version
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Access the project in your browser at [`localhost:3000`](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br>
+
+<p id="tech-stack"></p>
+
+## Tech Stack
+
+- [Next.js 13](https://nextjs.org)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Firebase](https://console.firebase.google.com/)
+- [NextAuth.js](https://next-auth.js.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Cloudinary](https://console.cloudinary.com/)
+- [Vercel](https://vercel.com)
+
+<br>
+
+#
+
+<p id="live-site"><p>
+
+<a href="https://dalle-sumit.up.railway.app/">![Live Site](https://res.cloudinary.com/dn1e07eul/image/upload/v1659389947/Readme%20Headers/inter-live-site_ngkqcf.png)</a>
+
+• **[DALL.E 2 Clone](https://dalle-sumit.up.railway.app/)** is a responsive web app can be viewed on any device.
+
+<br>
+
+
+
+#
+
+<p id="lets-connect"><p>
+
+<a href=#lets-connect>![Let's Connect!](https://res.cloudinary.com/dn1e07eul/image/upload/v1659314257/Readme%20Headers/inter-lets-connect_bv3kcd.png)</a>
+
+<p><a href="https://twitter.com/risesumit"><img src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" height=30 width=90 alt="Twitter badge"></a> <a href="https://www.linkedin.com/in/sumitssr/"><img src="https://img.shields.io/badge/linkedin-%230064e7.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=30 width=90 alt="Linkedin badge"></a> <a href="mailto:itssumit258@gmail.com"><img src="https://img.shields.io/badge/gmail-%23fd1745.svg?&style=for-the-badge&logo=gmail&logoColor=white" height=30 width=90 alt="Gmail badge"></a> <a href="https://github.com/sumitKcs"><img src="https://img.shields.io/badge/github-%23ff8e44.svg?&style=for-the-badge&logo=github&logoColor=white" height=30 width=90 alt="Github badge"></a></p>
+
+#
+
+<a href=#header>![Back to Top](https://res.cloudinary.com/dn1e07eul/image/upload/v1659314281/Readme%20Headers/inter-congrats_m4p3ck.png)</a>
