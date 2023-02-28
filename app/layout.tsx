@@ -79,8 +79,6 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <title>DALL.E 2 - AI Image Generation Tool</title>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta charSet="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta
           property="og:title"
@@ -98,8 +96,8 @@ export default async function RootLayout({
           itemProp="image"
           content="meta-preview-dalle-200x200.png"
         />
-        <meta property="og:image:width" content="200" />
-        <meta property="og:image:height" content="200" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
         <meta
           property="og:image:alt"
           content="DALL.E 2 - AI Image Generation Tool"
