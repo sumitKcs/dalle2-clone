@@ -10,7 +10,7 @@
 
 <a href="https://dalle-sumit.up.railway.app/">![DALL.E 2 Clone](https://i.postimg.cc/59szb2cQ/dalle-preview.png)</a>
 
-ChatGPT (Chat Generative Pre-trained Transformer) is a chatbot developed by OpenAI and launched in November 2022. It is built on top of OpenAI's GPT-3 family of large language models and has been fine-tuned (an approach to transfer learning) using both supervised and reinforcement learning techniques.
+An AI system that can create realistic images and art from a description in natural language
 
 #
 
