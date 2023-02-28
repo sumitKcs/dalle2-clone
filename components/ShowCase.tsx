@@ -102,7 +102,7 @@ function ShowCase() {
           {searchText ? (
             <RenderCard data={searchResults} title="No search reults found" />
           ) : (
-            <RenderCard data={postsData} title="No posts found" />
+            <RenderCard data={postsData} title="Loading..." />
           )}
         </div>
       </div>
