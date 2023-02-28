@@ -89,14 +89,14 @@ export default async function RootLayout({
         <meta
           property="og:image"
           itemProp="image"
-          content="https://i.postimg.cc/xjxPr0ys/Untitled-design-10.png"
+          content="meta-preview-dalle-200x200.png"
         />
         <meta property="og:image:width" content="300" />
         <meta property="og:image:height" content="300" />
         <meta
           property="og:image"
           itemProp="image"
-          content="https://i.postimg.cc/yxFpPt2q/Copy-of-Developed-By.png"
+          content="/meta-preview-dalle.png"
         />
         <meta property="og:image:width" content="1289" />
         <meta property="og:image:height" content="640" />
