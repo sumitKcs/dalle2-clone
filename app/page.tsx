@@ -1,3 +1,4 @@
+"use client";
 import { ShowCase } from "@/components";
 
 export default function Home() {

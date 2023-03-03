@@ -3,9 +3,11 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 
 function Header() {
   const { data: session } = useSession();
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
     <header className=" w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
       <Link href="/">
@@ -20,12 +22,18 @@ function Header() {
           Create
         </Link>
         <div className="flex justify-between items-center gap-5">
-          <div>
+          <div className={`${!isLoaded && "hidden"}`}>
             <img
+              onLoad={() => setIsLoaded(true)}
               src={session?.user?.image!}
               className="h-12 w-12 rounded-full"
             />
           </div>
+          <div
+            className={`h-12 w-12 rounded-full ${
+              isLoaded && "hidden"
+            } bg-gray-300`}
+          ></div>
           <div>
             <button
               onClick={() => signOut()}

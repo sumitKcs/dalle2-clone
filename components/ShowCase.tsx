@@ -7,6 +7,7 @@ import { collection, DocumentData, orderBy, query } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { db } from "@/firebase";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 type Props = {
   data: DocumentData[] | undefined;
@@ -102,12 +103,12 @@ function ShowCase() {
         <div className=" grid lg:grid-col-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
           {searchText ? (
             <RenderCard data={searchResults} title="No search reults found" />
-          ) : postsData ? (
-            <RenderCard data={postsData} title="" />
-          ) : (
+          ) : !postsData ? (
             Array(20)
               .fill("")
               .map((e, key) => <Skeleton key={key} />)
+          ) : (
+            <RenderCard data={postsData} title="" />
           )}
         </div>
       </div>
