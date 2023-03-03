@@ -25,7 +25,10 @@ function Header() {
           <div className={`${!isLoaded && "hidden"}`}>
             <img
               onLoad={() => setIsLoaded(true)}
-              src={session?.user?.image!}
+              src={
+                session?.user?.image! ||
+                `https://ui-avatars.com/api/?name=${session?.user?.name} `
+              }
               className="h-12 w-12 rounded-full"
             />
           </div>
