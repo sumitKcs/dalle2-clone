@@ -8,6 +8,7 @@ import { useState } from "react";
 function Header() {
   const { data: session } = useSession();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isLetterLoaded, setIsLetterLoaded] = useState(false);
   return (
     <header className=" w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
       <Link href="/">
@@ -26,7 +27,7 @@ function Header() {
             <img
               onLoad={() => setIsLoaded(true)}
               src={
-                session?.user?.image! ||
+                session?.user?.image ||
                 `https://ui-avatars.com/api/?name=${session?.user?.name} `
               }
               className="h-12 w-12 rounded-full"
@@ -35,8 +36,16 @@ function Header() {
           <div
             className={`h-12 w-12 rounded-full ${
               isLoaded && "hidden"
-            } bg-gray-300`}
-          ></div>
+            } bg-gray-300 `}
+          >
+            <div className={`${!isLetterLoaded && "hidden"}`}>
+              <img
+                onLoad={() => setIsLetterLoaded(true)}
+                src={`https://ui-avatars.com/api/?name=${session?.user?.name} `}
+                className="h-12 w-12 rounded-full "
+              />
+            </div>
+          </div>
           <div>
             <button
               onClick={() => signOut()}
