@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, FormField, Loader } from "@/components";
+import { Card, FormField, Skeleton } from "@/components";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, DocumentData, orderBy, query } from "firebase/firestore";
 import { useSession } from "next-auth/react";
@@ -21,6 +21,7 @@ const RenderCard = ({ data, title }: Props): any => {
       </>
     ));
   }
+
   return (
     <h2 className="mt-5 font-bold text-[#6449ff] text-xl uppercase">{title}</h2>
   );
@@ -101,8 +102,12 @@ function ShowCase() {
         <div className=" grid lg:grid-col-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
           {searchText ? (
             <RenderCard data={searchResults} title="No search reults found" />
+          ) : postsData ? (
+            <RenderCard data={postsData} title="" />
           ) : (
-            <RenderCard data={postsData} title="Loading..." />
+            Array(20)
+              .fill("")
+              .map((e, key) => <Skeleton key={key} />)
           )}
         </div>
       </div>

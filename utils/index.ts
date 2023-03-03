@@ -12,6 +12,7 @@ function getRandomPrompt(prompt: string): string {
 
 export default getRandomPrompt
 
+
 type Props = {
     _id: number,
     photo: string

@@ -7,65 +7,6 @@ export const metadata = {
   title: "Dall.E 2 - An AI Image Generation Tool",
   description:
     "Create images by giving your prompt to the AI and the AI will generate images for you based upon the given prompt",
-  // authors: [{ name: "Er. Sumit Kumar" }],
-  // keywords: ["openai", "AI image generation"],
-  // colorScheme: "light",
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "Dall.E 2",
-  //   description: "AI Image Generation Tool",
-  //   creator: "@risesumit",
-  //   images: ["https://i.postimg.cc/yxFpPt2q/Copy-of-Developed-By.png"],
-  // },
-  // openGraph: {
-  //   title: "Dall.E 2",
-  //   description: "AI Image Generation Tool",
-  //   url: "https://dalle-sumit.up.railway.app",
-  //   siteName: "Dall.E 2",
-  //   images: [
-  //     {
-  //       url: "https://i.postimg.cc/xjxPr0ys/Untitled-design-10.png",
-  //       width: "200",
-  //       height: "200",
-  //       alt: "Dall.E 2 - AI Image Generation Tool",
-  //     },
-  //     {
-  //       url: "https://i.postimg.cc/yxFpPt2q/Copy-of-Developed-By.png",
-  //       width: "1289",
-  //       height: "640",
-  //       alt: "Dall.E 2 - AI Image Generation Tool",
-  //     },
-  //   ],
-  //   locale: "en-US",
-  //   type: "website",
-  // },
-  // icons: {
-  //   icon: "/favicon.ico",
-  //   apple: [
-  //     {
-  //       url: "/apple-touch-icon.png",
-  //       sizes: "180x180",
-  //       type: "image/png",
-  //     },
-  //   ],
-  //   other: [
-  //     {
-  //       rel: "icon",
-  //       type: "image/png",
-  //       sizes: "32x32",
-  //       url: "/favicon-32x32.png",
-  //     },
-  //     {
-  //       rel: "icon",
-  //       type: "image/png",
-  //       sizes: "16x16",
-  //       url: "/favicon-16x16.png",
-  //     },
-  //   ],
-  // },
-  // alternates: {
-  //   canonical: "https://dalle-sumit.up.railway.app",
-  // },
 };
 
 export default async function RootLayout({

@@ -6,6 +6,8 @@ import ShowCase from "./ShowCase";
 import { SessionProvider } from "./SessionProvider";
 import Login from './Login'
 import DevelopedBy from "./DevelopedBy";
+import Skeleton from "./Skeleton";
+
 
 export {
     Card, 
@@ -15,5 +17,6 @@ export {
     ShowCase,
     SessionProvider,
     Login,
-    DevelopedBy
+    DevelopedBy,
+    Skeleton,
 }
