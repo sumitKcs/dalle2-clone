@@ -7,7 +7,6 @@ import { collection, DocumentData, orderBy, query } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { db } from "@/firebase";
 import Link from "next/link";
-import { useSelector } from "react-redux";
 
 type Props = {
   data: DocumentData[] | undefined;

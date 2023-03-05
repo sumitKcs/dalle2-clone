@@ -12,7 +12,9 @@ type data = {
 
 function Card({ _id, post }: data) {
   const [isLoaded, setIsLoaded] = useState<Boolean>(false);
-
+  let imgArray = post.photoUrl.split("/");
+  imgArray.splice(6, 0, ["q_70,w_400"]);
+  const newUrl = imgArray.join("/");
   return (
     <div className="rounded-xl group relative shadow-card hover:shadow-cardhover card roundex-xl">
       <div className={` ${!isLoaded && " hidden"}`}>
@@ -20,7 +22,7 @@ function Card({ _id, post }: data) {
           className="w-full h-auto object-cover rounded-xl "
           onLoad={() => setIsLoaded(true)}
           alt={post.prompt}
-          src={post.photoUrl}
+          src={newUrl}
         />
         <div className="group-hover:flex flex-col max-h-[94.5%] hidden absolute bottom-0 left-0 right-0 bg-[#10131f] m-2 p-4 rounded-md">
           <p className="text-white text-md overflow-y-auto prompt">
