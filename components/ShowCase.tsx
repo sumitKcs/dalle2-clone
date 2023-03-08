@@ -14,12 +14,9 @@ type Props = {
 };
 
 const RenderCard = ({ data, title }: Props): any => {
+  let i = 0;
   if (data?.length! > 0) {
-    return data?.map((post, id) => (
-      <>
-        <Card _id={id} post={post} />
-      </>
-    ));
+    return data?.map((post, id) => <Card key={id} _id={id} post={post} />);
   }
 
   return (
